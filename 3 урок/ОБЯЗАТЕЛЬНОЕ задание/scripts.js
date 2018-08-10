@@ -1,15 +1,20 @@
 let money,
 	name,
 	time,
-	price
+	price,
+	discount
 
 function start() {
-	while ( isNaN(money) || money == "" || money == null ) {
-		money = prompt("Ваш бюджет на месяц?", 90000);
+	function budgetPerDay() {
+			while ( isNaN(money) || money == "" || money == null ) {
+			money = prompt("Ваш бюджет на месяц?", 90000);
+		}
 	}
-
-	name = prompt( "Название вашего магазина?", "amazon");
+	
+	name = prompt("Название вашего магазина?", "amazon");
 	time = 21;
+
+	budgetPerDay();
 }
 
 start();
@@ -30,6 +35,16 @@ let mainList = {
 	open: false,
 	discount: false
 }
+
+function getEmployers() {
+	for ( let i = 0; i < 4; i++ ) {
+		let num = i + 1;
+		nameEmployers = prompt("Имя сотрудника №" + num, "Сотрудник - " + num);
+		mainList.employers["Сотрудник №" + num] = nameEmployers;
+	}
+}
+
+getEmployers();
 
 function chooseGoods() {
 	for (let i = 0; i < 5; i++) {
@@ -57,7 +72,9 @@ chooseGoods();
 // 		console.log('Всё верно!')
 // 		mainList.shopGoods[i] = a;
 // 	} else {
-// 		i = i - 1;
+// 		mainList.shopGoods[i] = a;
+// 		alert(mainList.shopGoods[i] + " не подходит!");
+// 		mainList.shopGoods[i] = 'Не подходит по условию!';
 // 	}
 
 // 	i++
@@ -74,7 +91,9 @@ chooseGoods();
 // 		console.log('Всё верно!')
 // 		mainList.shopGoods[i] = a;
 // 	} else {
-// 		i = i - 1;
+// 		mainList.shopGoods[i] = a;
+// 		alert(mainList.shopGoods[i] + " не подходит!");
+// 		mainList.shopGoods[i] = 'Не подходит по условию!';
 // 	}
 // 	i++
 // }
@@ -95,5 +114,9 @@ function workTime() {
 workTime();
 	
 alert( "Ваш ежедневный бюджет : " + mainList.budget / 30);
+
+if ( discount == true ) {
+	price = price * 0.8;
+}
 
 console.log(mainList);
