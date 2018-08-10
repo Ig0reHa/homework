@@ -20,7 +20,35 @@ letter = letter.replace(rep_let, "o");
 
 alert(letter);
 
-function (arg) {
+
+
+
+
+let arr = [20, 33, 1, "Человек", 2, 3];
+
+for ( let i = 0; i < arr.length; i++ ) {
+  arr[i] = Math.cbrt(arr[i]);
+}
+
+function arraySum(array){
+  var sum = 0;
+
+  for(var i = 0; i < array.length; i++){
+      sum += array[i];
+  }
+}
+
+arraySum(arr);
+
+let finishsum = Math.sqrt(arr);
+
+console.log(finishsum);
+
+
+
+
+
+function fun(arg) {
   if ( typeof(arg) != "string" ) {
     alert("Можно ввести только строку!");
   }
