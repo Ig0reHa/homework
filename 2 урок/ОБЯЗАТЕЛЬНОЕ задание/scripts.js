@@ -16,9 +16,7 @@ for (let i = 0; i < 5; i++) {
 		console.log('Всё верно!')
 		mainList.shopGoods[i] = a;
 	} else {
-		mainList.shopGoods[i] = a;
-		alert(mainList.shopGoods[i] + " не подходит!");
-		mainList.shopGoods[i] = 'Не подходит по условию!';
+		i = i - 1;
 	}
 }
 
