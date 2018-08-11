@@ -2,15 +2,15 @@ let money,
 	name,
 	time,
 	price,
-	discount
+	discount;
 
-function start() {
-	function budgetPerDay() {
+function budgetPerDay() {
 			while ( isNaN(money) || money == "" || money == null ) {
 			money = prompt("Ваш бюджет на месяц?", 90000);
 		}
 	}
-	
+
+function start() {		
 	name = prompt("Название вашего магазина?", "amazon");
 	time = 21;
 
@@ -34,7 +34,7 @@ let mainList = {
 	employers: {},
 	open: false,
 	discount: false
-}
+};
 
 function getEmployers() {
 	for ( let i = 0; i < 4; i++ ) {
@@ -51,7 +51,7 @@ function chooseGoods() {
 		let a = prompt("Какой тип товаров будем продавать?", "Техника " + [i]);
 
 		if ((typeof(a)) === 'string' && (typeof(a)) != null && a != "" && a.length < 50) {
-			console.log('Всё верно!')
+			console.log('Всё верно!');
 			mainList.shopGoods[i] = a;
 		} else {
 			i = i - 1;
@@ -115,8 +115,10 @@ workTime();
 	
 alert( "Ваш ежедневный бюджет : " + mainList.budget / 30);
 
-if ( discount == true ) {
+function getDiscount() {
+ if ( discount == true ) {
 	price = price * 0.8;
+ }
 }
 
 console.log(mainList);
