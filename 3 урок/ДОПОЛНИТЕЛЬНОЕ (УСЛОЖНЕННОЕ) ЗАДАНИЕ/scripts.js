@@ -26,13 +26,15 @@ alert(letter);
 
 let arr = [20, 33, 1, "Человек", 2, 3];
 
+arr.splice(3, 1);
+
 for ( let i = 0; i < arr.length; i++ ) {
-  arr[i] = Math.cbrt(arr[i]);
+  arr[i] = Math.pow(arr[i], 3);
 }
 
-function arraySum(array){
-  var sum = 0;
+var sum = 0;
 
+function arraySum(array){
   for(var i = 0; i < array.length; i++){
       sum += array[i];
   }
@@ -40,7 +42,7 @@ function arraySum(array){
 
 arraySum(arr);
 
-let finishsum = Math.sqrt(arr);
+let finishsum = Math.sqrt(sum);
 
 console.log(finishsum);
 
