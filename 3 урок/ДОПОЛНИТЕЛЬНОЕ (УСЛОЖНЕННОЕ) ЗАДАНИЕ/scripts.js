@@ -50,21 +50,27 @@ console.log(finishsum);
 
 
 
+var words = "                   wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww";
+
 function fun(arg) {
   if ( typeof(arg) != "string" ) {
     alert("Можно ввести только строку!");
   }
-  arg.trim();
 
-  function cutMessage(str) {
-    if (str.length > 50) {
-      return str.slice(0, 50) + '...';
+  arg = arg.trim();
+
+  function truncate(str, maxlength) {
+    if (str.length > maxlength) {
+      return str.slice(0, maxlength - 3) + '...';
+      // итоговая длина равна maxlength
     }
 
     return str;
   }
 
-  cutMessage(arg);
+  arg = truncate(arg, 50);
 
   return arg;
 }
+
+alert(fun(words));
