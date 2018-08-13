@@ -113,7 +113,13 @@ function workTime() {
 
 workTime();
 	
-alert( "Ваш ежедневный бюджет : " + mainList.budget / 30);
+
+
+function dailyBudget() {
+ return mainList.budget / 30;
+}
+
+alert( "Ваш ежедневный бюджет : " + dailyBudget() );
 
 function getDiscount() {
  if ( discount == true ) {
