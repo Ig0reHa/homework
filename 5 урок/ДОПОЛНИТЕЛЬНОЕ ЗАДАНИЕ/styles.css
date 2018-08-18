@@ -1,0 +1,12 @@
+* {
+	display: block;
+	font-size: 30px;
+}
+
+.box {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
