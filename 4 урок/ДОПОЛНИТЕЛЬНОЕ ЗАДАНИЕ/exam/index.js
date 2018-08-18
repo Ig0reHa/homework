@@ -1,24 +1,56 @@
 function getFriendlyNumbers(start, end) {
-	let firstNumbers = [[220, 284]],
-		secondNumber = [[1184, 1210]],
-		allNumbers = [[220, 284], [1184, 1210]],
-		clearArr = [];
+  let numArr = [];  
+  while(start > end || isNaN(start, end) || typeof(start, end) != "number" || start % 1 != 0 || end % 1 != 0 || start < 0 || end < 0){
+    return false;
+  }      
+   for (let i = start; i <= end; i++) {
+    for (let s = start; s <= end; s++) {
+      if (isFriendly(i, s) && i !== s && i < s) {
+        numArr.push([i, s]);
+      } 
+    }
+  } 
+  return numArr;  
+} 
 
-	if ( (typeof(start)) != "number" || (typeof(end)) != "number" || start > end || start < 1 || end < 1 ) {
-		return false;
-	} else if ( start >= 1 && start <= 220 && end >= 284 && end < 1184 ) {
-		return firstNumbers;
-	} else if ( start >= 1 && start <= 220 && end >= 1210 && end < 2620 ) {
-		return allNumbers;
-	} else if ( start > 220 && start <= 1184 && end >= 1210 && end < 1184 ) {
-		return secondNumber;
-	} else {
-		return clearArr;
-	}
+function isFriendly (num1, num2){
+   var summ1 = getDivisorsSumm(num1);
+   var summ2 = getDivisorsSumm(num2);
+
+   if (summ1 == num2 && summ2 == num1) {
+       return true;
+   } else {  
+     return false;
+   }
 }
 
+function getDivisorsSumm (num){
+    return getSummDivisors(getDivisors(num));
+}
+
+function getDivisors (num) {
+    let arr = [];
+
+    for(let i =1; i < num; i++){
+        if(num % i == 0){
+            arr.push(i)
+        }
+    }
+    return arr;
+}
+
+function getSummDivisors (arr){
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++){
+         sum += arr[i];
+    }
+    return sum;
+}
+
+
+
 module.exports = {
-    firstName: 'Igor',
-    secondName: 'Tolkachev',
-    task: getFriendlyNumbers
+     firstName: 'Igor',
+     secondName: 'Tolkachev',
+     task: getFriendlyNumbers
 }
