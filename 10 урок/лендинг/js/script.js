@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
 		function updateClock() {
 			function addZero(num){
 				if (num > 0 && num < 10) { 
-					return `0` + num;
+					return `0 ${num}`;
 				} else {
 					return num;
 				}
@@ -83,8 +83,8 @@ window.addEventListener('DOMContentLoaded', ()=> {
 			}
 		};
 
-		updateClock();
 		let timeInterval = setInterval(updateClock, 1000);
+		updateClock();
 
 	}
 
