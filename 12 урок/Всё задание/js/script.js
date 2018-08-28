@@ -299,7 +299,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	totalValue.innerHTML = 0;
 
 	persons.addEventListener('change', function() {
-		console.log(this.value.replace(/\D/g, ""));
+		this.value = this.value.replace(/\D/g, "");
 		personsSum = +this.value;
 		total = (daysSum + personsSum) * 4000;
 		if (restDays.value == '') {
