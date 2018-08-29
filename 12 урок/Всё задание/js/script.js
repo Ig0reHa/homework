@@ -299,7 +299,6 @@ window.addEventListener('DOMContentLoaded', function() {
 	totalValue.innerHTML = 0;
 
 	persons.addEventListener('change', function() {
-		this.value = this.value.replace(/\D/g, "");
 		personsSum = +this.value;
 		total = (daysSum + personsSum) * 4000;
 		if (restDays.value == '') {
@@ -311,6 +310,10 @@ window.addEventListener('DOMContentLoaded', function() {
 		} else {
 			totalValue.innerHTML = total;
 		}
+	});
+
+	persons.addEventListener('keypress', function() {
+		this.value = this.value.replace(/\D/g, "");
 	});
 
 	restDays.addEventListener('change', function() {
@@ -325,6 +328,10 @@ window.addEventListener('DOMContentLoaded', function() {
 		} else {
 			totalValue.innerHTML = total;
 		}
+	});
+
+	restDays.addEventListener('keypress', function() {
+		this.value = this.value.replace(/\D/g, "");
 	});
 
 	place.addEventListener('change', function() {
