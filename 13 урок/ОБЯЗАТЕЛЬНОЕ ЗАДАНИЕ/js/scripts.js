@@ -1,42 +1,33 @@
 $(document).ready(function() {
 
 	$('.modal').css({
-		transform: 'scale(0)',
 		opacity: '0'
 	});
 	
 	$('.main_btna').on('click', function() {
-		$('.overlay').fadeIn();
-		$('.modal').animate({
-			display: 'block',
-			transform: 'scale(1)',
-			opacity: '1'
-		}, 1000);
-	});
+        $('.overlay').fadeIn();
+        $('.modal').css( { display :"block" } );
+        $('.modal').animate({
+            opacity: '1'
+        }, 1000);
+    });
 
 	$('.close').on('click', function() {
 		$('.overlay').fadeOut();
-		$('.modal').slideUp("slow");
+		$('.modal').css( { display :"none" } );
+        $('.modal').animate({
+            opacity: '0'
+        }, 1000);
 	});
-
-	let message = new Object();
-	message.loading = "Загрузка...";
-	message.success = `<img src="img/success.svg">`;
-	message.failure = "Что то пошло не так...";
-
-	// input = form.getElementsByTagName('input'),
 
 	let form = $('.form-inline'),
 		name = $('.contactform_name'),
 		phone = $('.contactform_phone'),
 		email = $('.contactform_mail'),
-		textMessage = $('#textar'),
-		statusMessage = document.createElement('div');
+		textMessage = $('#textar');
 
 	form.on('submit', function(event) {
-		statusMessage.classList.add('status');
 		event.preventDefault();
-		form.appendChild(statusMessage);
 
 		// AJAX
 		let request = new XMLHttpRequest();
@@ -50,21 +41,24 @@ $(document).ready(function() {
 
 		request.onreadystatechange = function() {
 			if (request.readyState < 4) {
-				statusMessage.innerHTML = message.loading;
+				form.append(`<p class="form-loading">Загрузка...</p>`);
 			} else if (request.readyState === 4) {
 				if (request.status === 200 && request.status < 300) {
-					statusMessage.innerHTML = message.success;
-					//Добавляем контент на страницу
+					form.append(`<p class="form-success">Форма успешно отправлена !</p>`);
+					$('.form-loading').remove();
 				}
 			} else {
-				statusMessage.innerHTML = message.failure;
+				form.append(`<p class="form-fail">Что то пошло не так...</p>`);
 			}
 		}
 
-		for ( let i = 0; i < input.length; i++) {
-			input[i].value = "";
-			// Очистка полей ввода
-		}
+		name.val("");
+		phone.val("");
+		email.val("");
+		textMessage.val("");
+		
 	});
+
+	
 
 });
