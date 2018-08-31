@@ -312,7 +312,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	});
 
-	persons.addEventListener('keypress', function() {
+	persons.addEventListener('keyup', function() {
 		this.value = this.value.replace(/\D/g, "");
 	});
 
@@ -330,7 +330,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	});
 
-	restDays.addEventListener('keypress', function() {
+	restDays.addEventListener('keyup', function() {
 		this.value = this.value.replace(/\D/g, "");
 	});
 
