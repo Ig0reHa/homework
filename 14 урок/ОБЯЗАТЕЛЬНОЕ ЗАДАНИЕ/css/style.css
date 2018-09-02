@@ -482,6 +482,9 @@ html {
   font-size: 38px;
   color: #c78030;
 }
+html {
+  scroll-behavior: smooth;
+}
 .content .counter-total span {
   font-size: 46px;
 }
