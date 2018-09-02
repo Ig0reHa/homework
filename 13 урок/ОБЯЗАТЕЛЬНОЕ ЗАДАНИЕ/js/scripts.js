@@ -1,23 +1,41 @@
 $(document).ready(function() {
 
-	$('.modal').css({
-		opacity: '0'
-	});
-	
+	$('.main_btn').on('click', function() {
+		$('.overlay').fadeIn(1000);
+        $('.modal').css({
+            "position": "absolute",
+            "display":"block",
+            "top":"-100%"
+         });
+         $('.modal').animate( { top:"10%" }, 1000);
+    });
+
+	$('[href="#sheldure"]').on('click', function() {
+		$('.overlay').fadeIn(1000);
+        $('.modal').css({
+            "position": "absolute",
+            "display":"block",
+            "top":"-100%"
+         });
+         $('.modal').animate( { top:"10%" }, 1000);
+    });
+
 	$('.main_btna').on('click', function() {
-        $('.overlay').fadeIn();
-        $('.modal').css( { display :"block" } );
-        $('.modal').animate({
-            opacity: '1'
-        }, 1000);
+		$('.overlay').fadeIn(1000);
+        $('.modal').css({
+            "position": "absolute",
+            "display":"block",
+            "top":"-100%"
+         });
+         $('.modal').animate( { top:"10%" }, 1000);
     });
 
 	$('.close').on('click', function() {
-		$('.overlay').fadeOut();
-		$('.modal').css( { display :"none" } );
-        $('.modal').animate({
-            opacity: '0'
-        }, 1000);
+        $('.modal').animate( { top:"-100%" }, 1000);
+        $('.overlay').animate({
+		    opacity: '0',
+		}, 1000);
+		$('.overlay').fadeOut(1000);
 	});
 
 	let form = $('.form-inline'),
