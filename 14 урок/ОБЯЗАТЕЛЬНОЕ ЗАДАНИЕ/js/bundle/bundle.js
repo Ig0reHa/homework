@@ -52,6 +52,8 @@
 					totalValue.innerHTML = 0;
 				} else if (persons.value == '' && restDays.value != '') {
 					totalValue.innerHTML = 0;
+				} else if (persons.value == '0' || restDays.value == '0') {
+					totalValue.innerHTML = 0;
 				} else {
 					totalValue.innerHTML = total;
 				}
@@ -70,6 +72,8 @@
 					totalValue.innerHTML = 0;
 				} else if (persons.value != '' && restDays.value == '') {
 					totalValue.innerHTML = 0;
+				} else if (restDays.value == '0' || persons.value == '0') {
+					totalValue.innerHTML = 0;
 				} else {
 					totalValue.innerHTML = total;
 				}
@@ -81,6 +85,8 @@
 
 			place.addEventListener('change', function () {
 				if (persons.value == '' || restDays.value == '') {
+					totalValue.innerHTML = 0;
+				} else if (persons.value == '0' || restDays.value == '0') {
 					totalValue.innerHTML = 0;
 				} else {
 					var a = total;
