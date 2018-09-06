@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', function() {
 
+	// GIFT POPUP
+
 	let gift = document.getElementsByClassName('fixed-gift')[0],
 		popupGift = document.getElementsByClassName('popup-gift')[0];
 		popupGiftClose = document.getElementsByClassName('popup-close')[1];
@@ -10,14 +12,6 @@ window.addEventListener('DOMContentLoaded', function() {
 		popupGift.classList.add('animated', 'fadeIn');
 	});
 
-	popupGift.addEventListener('click', () => {
-		popupGift.classList.remove('fadeIn');
-		popupGift.classList.add('fadeOut');
-		setTimeout(function () {
-			popupGift.style.display = 'none';
-		}, 1000);
-	});
-
 	popupGiftClose.addEventListener('click', () => {
 		popupGift.classList.remove('fadeIn');
 		popupGift.classList.add('fadeOut');
@@ -25,5 +19,19 @@ window.addEventListener('DOMContentLoaded', function() {
 			popupGift.style.display = 'none';
 		}, 1000);
 	});
+
+	window.onclick = function(event) {
+	    if (event.target == popupGift) {
+	        popupGift.classList.remove('fadeIn');
+			popupGift.classList.add('fadeOut');
+			setTimeout(function () {
+				popupGift.style.display = 'none';
+			}, 1000);
+	    }
+	}
+
+
+
+
 
 });
