@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick.css">
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+</head>
+<body>
+
+	<div class="wrapper">
+		<div class="tab1">
+			<div class="slider">
+			  <div><img src="img/1.jpg" alt=""></div>
+			  <div><img src="img/2.jpg" alt=""></div>
+			  <div><img src="img/3.jpg" alt=""></div>
+			  <div><img src="img/4.jpg" alt=""></div>
+			  <div><img src="img/5.png" alt=""></div>
+			</div>
+		</div>
+		<div class="tab2">
+			<form class="board">
+			  <div class="boxes">
+			    <input class="x" id="x-1" type="checkbox" />
+			    <input class="x" id="x-2" type="checkbox" />
+			    <input class="x" id="x-3" type="checkbox" />
+			    <input class="x" id="x-4" type="checkbox" />
+			    <input class="x" id="x-5" type="checkbox" />
+			    <input class="x" id="x-6" type="checkbox" />
+			    <input class="x" id="x-7" type="checkbox" />
+			    <input class="x" id="x-8" type="checkbox" />
+			    <input class="x" id="x-9" type="checkbox" /><input class="o" id="o-1" type="checkbox" /><input class="o" id="o-2" type="checkbox" /><input class="o" id="o-3" type="checkbox" /><input class="o" id="o-4" type="checkbox" /><input class="o" id="o-5" type="checkbox" /><input class="o" id="o-6" type="checkbox" /><input class="o" id="o-7" type="checkbox" /><input class="o" id="o-8" type="checkbox" /><input class="o" id="o-9" type="checkbox" />
+			    <div class="controls">
+			      <div class="control -x">
+			        <div class="control-labels">
+			          <label class="x" for="x-1"></label>
+			          <label class="x" for="x-2"></label>
+			          <label class="x" for="x-3"></label>
+			          <label class="x" for="x-4"></label>
+			          <label class="x" for="x-5"></label>
+			          <label class="x" for="x-6"></label>
+			          <label class="x" for="x-7"></label>
+			          <label class="x" for="x-8"></label>
+			          <label class="x" for="x-9"></label>
+			        </div>
+			      </div>
+			      <div class="control -o">
+			        <div class="control-labels">
+			          <label class="o" for="o-1"></label>
+			          <label class="o" for="o-2"></label>
+			          <label class="o" for="o-3"></label>
+			          <label class="o" for="o-4"></label>
+			          <label class="o" for="o-5"></label>
+			          <label class="o" for="o-6"></label>
+			          <label class="o" for="o-7"></label>
+			          <label class="o" for="o-8"></label>
+			          <label class="o" for="o-9"></label>
+			        </div>
+			      </div>
+			    </div>
+			    <div class="done">
+			      <div class="lead">
+			        Winner is
+			      </div>
+			      <div class="winner"></div>
+			      <input type="submit" value="Again" />
+			    </div>
+			    <div class="tie">
+			      <span>It's a tie</span><input type="submit" value="Again" />
+			    </div>
+			    <div class="turn">
+			      <div class="turn-x"></div>
+			      <div class="turn-o"></div>
+			    </div>
+			  </div>
+			  <h1>
+			    <span>Tic</span><span>Tac</span><span>Toe</span>
+			  </h1>
+			</form>
+		</div>
+		<div class="tab3">
+			<div class="container">  
+	            <div class="view">0</div>
+	        </div>
+		</div>
+		</div>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="slick/slick.min.js"></script>
+	<script src="script.js"></script>
+	
+</body>
+</html>
