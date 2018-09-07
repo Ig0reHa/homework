@@ -10,6 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		popupGift.classList.remove('fadeOut');
 		popupGift.style.display = 'block';
 		popupGift.classList.add('animated', 'fadeIn');
+		gift.remove();
 	});
 
 	popupGiftClose.addEventListener('click', () => {
@@ -17,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		popupGift.classList.add('fadeOut');
 		setTimeout( () => {
 			popupGift.style.display = 'none';
-		}, 1000);
+		}, 700);
 	});
 
 
@@ -42,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		popupDesign.classList.add('fadeOut');
 		setTimeout( () => {
 			popupDesign.style.display = 'none';
-		}, 1000);
+		}, 700);
 	});
 
 
@@ -54,7 +55,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			popupGift.classList.add('fadeOut');
 			setTimeout( () => {
 				popupGift.style.display = 'none';
-			}, 1000);
+			}, 700);
 	    }
 
 	    if (event.target == popupDesign) {
@@ -62,7 +63,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			popupDesign.classList.add('fadeOut');
 			setTimeout( () => {
 				popupDesign.style.display = 'none';
-			}, 1000);
+			}, 700);
 	    }
 	}
 
