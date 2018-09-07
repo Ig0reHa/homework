@@ -47,6 +47,29 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 
 
+	// CONSULTATION POPUP
+
+	let popupConsultation = document.getElementsByClassName('popup-consultation')[0],
+		ConsultationBtn = document.querySelectorAll('.button-consultation');
+		popupConsultationClose = document.getElementsByClassName('popup-close')[0];
+
+	for (let i = 0; i < ConsultationBtn.length; i++ ) {
+		ConsultationBtn[i].addEventListener('click', () => {
+			popupConsultation.classList.remove('fadeOut');
+			popupConsultation.style.display = 'block';
+			popupConsultation.classList.add('animated', 'fadeIn');
+		});
+	}
+
+	popupConsultationClose.addEventListener('click', () => {
+		popupConsultation.classList.remove('fadeIn');
+		popupConsultation.classList.add('fadeOut');
+		setTimeout( () => {
+			popupConsultation.style.display = 'none';
+		}, 700);
+	});
+
+
 	// При нажатии на подложку popup исчезает
 
 	window.onclick = (event) => {
@@ -63,6 +86,14 @@ window.addEventListener('DOMContentLoaded', () => {
 			popupDesign.classList.add('fadeOut');
 			setTimeout( () => {
 				popupDesign.style.display = 'none';
+			}, 700);
+	    }
+
+	    if (event.target == popupConsultation) {
+	        popupConsultation.classList.remove('fadeIn');
+			popupConsultation.classList.add('fadeOut');
+			setTimeout( () => {
+				popupConsultation.style.display = 'none';
 			}, 700);
 	    }
 	}
