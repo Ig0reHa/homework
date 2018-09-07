@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
+	let modalIsOpen = false;
+
 	// GIFT POPUP
 
 	let gift = document.getElementsByClassName('fixed-gift')[0],
@@ -11,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		popupGift.style.display = 'block';
 		popupGift.classList.add('animated', 'fadeIn');
 		gift.remove();
+		modalIsOpen = true;
 	});
 
 	popupGiftClose.addEventListener('click', () => {
@@ -19,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		setTimeout( () => {
 			popupGift.style.display = 'none';
 		}, 700);
+		modalIsOpen = false;
 	});
 
 
@@ -35,6 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			popupDesign.classList.remove('fadeOut');
 			popupDesign.style.display = 'block';
 			popupDesign.classList.add('animated', 'fadeIn');
+			modalIsOpen = true;
 		});
 	}
 
@@ -44,6 +49,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		setTimeout( () => {
 			popupDesign.style.display = 'none';
 		}, 700);
+		modalIsOpen = false;
 	});
 
 
@@ -58,6 +64,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			popupConsultation.classList.remove('fadeOut');
 			popupConsultation.style.display = 'block';
 			popupConsultation.classList.add('animated', 'fadeIn');
+			modalIsOpen = true;
 		});
 	}
 
@@ -67,8 +74,24 @@ window.addEventListener('DOMContentLoaded', () => {
 		setTimeout( () => {
 			popupConsultation.style.display = 'none';
 		}, 700);
+		modalIsOpen = false;
 	});
 
+	// Если пользователь на странице больше 60 секунд - появится модальное окно (popup-consultation)
+
+	let popupTimeOut = setTimeout( () => {
+		if ( modalIsOpen == false ) {
+			popupConsultation.classList.remove('fadeOut');
+			popupConsultation.style.display = 'block';
+			popupConsultation.classList.add('animated', 'fadeIn');
+		}
+	}, 60000);
+
+	if ( modalIsOpen == true ) {
+		clearTimeout(popupTimeOut);
+	}
+
+	
 
 	// При нажатии на подложку popup исчезает
 
@@ -79,6 +102,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			setTimeout( () => {
 				popupGift.style.display = 'none';
 			}, 700);
+			modalIsOpen = false;
 	    }
 
 	    if (event.target == popupDesign) {
@@ -87,6 +111,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			setTimeout( () => {
 				popupDesign.style.display = 'none';
 			}, 700);
+			modalIsOpen = false;
 	    }
 
 	    if (event.target == popupConsultation) {
@@ -95,6 +120,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			setTimeout( () => {
 				popupConsultation.style.display = 'none';
 			}, 700);
+			modalIsOpen = false;
 	    }
 	}
 
@@ -112,6 +138,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			loadMoreBtn.remove();
 		});
 	}
+
 
 
 });
