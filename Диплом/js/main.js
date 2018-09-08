@@ -158,5 +158,55 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 
+	// Картинки при наведении
+
+	// let imgBlock3 = document.getElementsByClassName('sizes-block')[2],
+	// 	realImg = document.getElementsByClassName('realImg')[2];
+
+	// imgBlock3.onmouseenter = () => {
+	// 	realImg.style.display = 'block';
+	// 	realImg.classList.add('animated', 'fadeIn');
+	// }
+
+	// imgBlock3.onmouseleave = () => {
+	// 	realImg.style.display = 'none';
+	// }
+
+	let imgBlock = document.getElementsByClassName('sizes-block'),
+		realImg = document.getElementsByClassName('realImg'),
+		sizes = document.getElementsByClassName('sizes')[0];
+
+	if(window.matchMedia('(min-width: 768px)').matches) {
+	  for(let i = 0; i < imgBlock.length; i++ ) {
+			imgBlock[i].onmouseenter = () => {
+				realImg[i].style.display = 'block';
+				realImg[i].classList.add('animated', 'fadeIn');
+			}
+			imgBlock[i].onmouseleave = () => {
+				realImg[i].style.display = 'none';
+			}
+		}
+	}
+
+	if(window.matchMedia('(max-width: 768px)').matches) {
+	  for(let i = 0; i < imgBlock.length; i++ ) {
+			imgBlock[i].onclick = () => {
+				realImg[i].style.display = 'block';
+				realImg[i].classList.add('animated', 'fadeIn');
+			}
+
+			// Не работает
+
+			// sizes.onclick = (event) => {
+			// 	if (event.target == realImg[i]) {
+			// 		for(let i = 0; i < imgBlock.length; i++ ) {
+			// 			realImg[i].style.display = 'none';
+			// 		}
+			// 	}
+			// }
+		}
+	}
+
+
 
 });
