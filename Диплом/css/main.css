@@ -902,7 +902,7 @@ h4 {
   border-bottom: 2px dotted #333;
 }
 .often-questions .accordion-block {
-  margin-top: 6rem;
+  margin-bottom: 6rem;
   background-color: #f7e7e6;
   padding: 3rem 4rem;
 }
@@ -1725,6 +1725,27 @@ h4 {
   }
 }
 
+
+
+
+
 .button, .button-order, .button-design {
   z-index: 10 !important;
+}
+
+.accordion-heading.active + .accordion-block {
+  display: block;
+}
+
+.accordion-heading.active {
+  cursor: auto;
+  color: #c51abb;
+}
+
+.accordion-heading.active span {
+  border: none;
+}
+
+.accordion-block {
+  display: none;
 }
