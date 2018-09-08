@@ -87,7 +87,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 	}, 60000);
 
-	if ( modalIsOpen == true ) {
+	if ( modalIsOpen ) {
 		clearTimeout(popupTimeOut);
 	}
 
