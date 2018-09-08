@@ -140,5 +140,23 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 
 
+	// Аккордеон
+
+	let accordionHeading = document.getElementsByClassName('accordion-heading'),
+    	accordionBlock = document.getElementsByClassName('accordion-block');
+
+	for (let i = 0; i < accordionHeading.length; i++) {
+	    accordionHeading[i].addEventListener('click', function() {
+	        if (!(this.classList.contains('active'))) {
+	            for(let i = 0; i < accordionHeading.length; i++) {
+	                accordionHeading[i].classList.remove('active'); 
+	            }
+	            this.classList.add('active');
+	            accordionBlock[i].classList.add('animated', 'zoomIn');
+	        }
+	    })
+	}
+
+
 
 });
