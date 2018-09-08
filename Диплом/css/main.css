@@ -1749,3 +1749,11 @@ h4 {
 .accordion-block {
   display: none;
 }
+
+.realImg {
+  position: absolute;
+  z-index: 5;
+  display: none;
+  opacity: 0;
+  transition-duration: 1s;
+}
