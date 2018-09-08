@@ -160,18 +160,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	// Картинки при наведении
 
-	// let imgBlock3 = document.getElementsByClassName('sizes-block')[2],
-	// 	realImg = document.getElementsByClassName('realImg')[2];
-
-	// imgBlock3.onmouseenter = () => {
-	// 	realImg.style.display = 'block';
-	// 	realImg.classList.add('animated', 'fadeIn');
-	// }
-
-	// imgBlock3.onmouseleave = () => {
-	// 	realImg.style.display = 'none';
-	// }
-
 	let imgBlock = document.getElementsByClassName('sizes-block'),
 		realImg = document.getElementsByClassName('realImg'),
 		sizes = document.getElementsByClassName('sizes')[0];
@@ -206,6 +194,60 @@ window.addEventListener('DOMContentLoaded', () => {
 			// }
 		}
 	}
+
+
+	// Калькулятор
+
+	let size = document.querySelector('#size'),
+		material = document.querySelector('#material'),
+		addition = document.querySelector('#options'),
+		promoCode = document.getElementsByClassName('promocode')[0],
+		totalPrice = document.getElementsByClassName('calc-price')[0],
+		sizeVal = 0,
+		materialVal = 0,
+		additionVal = 0;
+
+	totalPrice.innerHTML = 0;
+
+	size.addEventListener('change', function() {
+		sizeVal = size.value;
+		console.log(sizeVal);
+		if (size.value != 'Выберите размер картины' && material.value != 'Выберите материал картины' && promoCode.value == 'IWANTPOPART') {
+			totalPrice.innerHTML = (+sizeVal + +materialVal + +additionVal) * 0.7;
+		} else if (size.value != 'Выберите размер картины' && material.value != 'Выберите материал картины') {
+			totalPrice.innerHTML = +sizeVal + +materialVal + +additionVal;
+		} else {
+			totalPrice.innerHTML = 0;
+		}
+	});
+
+	material.addEventListener('change', function() {
+		materialVal = material.value;
+		console.log(materialVal);
+		if (material.value != 'Выберите материал картины' && size.value != 'Выберите размер картины' && promoCode.value == 'IWANTPOPART') {
+			totalPrice.innerHTML = (+sizeVal + +materialVal + +additionVal) * 0.7;
+		} else if (material.value != 'Выберите материал картины' && size.value != 'Выберите размер картины') {	
+			totalPrice.innerHTML = +sizeVal + +materialVal + +additionVal;
+		} else {
+			totalPrice.innerHTML = 0;
+		}
+	});
+
+	addition.addEventListener('change', function() {
+		additionVal = addition.value;
+		console.log(additionVal);
+		if (addition.value != 'Дополнительные услуги' && material.value != 'Выберите материал картины' && size.value != 'Выберите размер картины' && promoCode.value == 'IWANTPOPART') {
+			totalPrice.innerHTML = (+sizeVal + +materialVal + +additionVal) * 0.7;
+		} else if (addition.value != 'Дополнительные услуги' && material.value != 'Выберите материал картины' && size.value != 'Выберите размер картины') {
+			totalPrice.innerHTML = +sizeVal + +materialVal + +additionVal;
+		}
+	});
+
+	promoCode.addEventListener('change', function() {
+		if (promoCode.value == 'IWANTPOPART') {
+			totalPrice.innerHTML *= 0.7;
+		}
+	});
 
 
 
